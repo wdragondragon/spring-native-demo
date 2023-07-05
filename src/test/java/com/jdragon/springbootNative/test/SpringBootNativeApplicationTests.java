@@ -1,10 +1,10 @@
-package com.hy;
+package com.jdragon.springbootNative.test;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class HySpringboot3DemoApplicationTests {
+class SpringBootNativeApplicationTests {
 
     @Test
     void contextLoads() {

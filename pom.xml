@@ -5,14 +5,14 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>3.0.0</version>
+        <version>3.1.1</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <groupId>com.hy</groupId>
-    <artifactId>hy-springboot3-demo</artifactId>
+    <groupId>com.jdragon</groupId>
+    <artifactId>spring-native-demo</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>hy-springboot3-demo</name>
-    <description>hy-springboot3-demo</description>
+    <name>spring-native-demo</name>
+    <description>spring-native-demo</description>
     <properties>
         <java.version>17</java.version>
     </properties>
@@ -32,6 +32,15 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>8.0.33</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-jpa</artifactId>
+        </dependency>
     </dependencies>
 
     <build>
@@ -43,6 +52,9 @@
             <plugin>
                 <groupId>org.graalvm.buildtools</groupId>
                 <artifactId>native-maven-plugin</artifactId>
+                <configuration>
+                    <buildArgs>-H:DynamicProxyConfigurationFiles=src\main\resources\dynamic-proxy.json</buildArgs>
+                </configuration>
             </plugin>
         </plugins>
     </build>
