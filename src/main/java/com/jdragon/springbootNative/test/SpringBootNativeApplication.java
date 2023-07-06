@@ -9,7 +9,6 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 import org.springframework.data.domain.Example;
-import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 import java.util.Optional;
@@ -38,10 +37,9 @@ public class SpringBootNativeApplication {
             Student cond = new Student();
             cond.setGrade("大学");
             studentRepository.findAll(Example.of(cond)).forEach(s -> logger.info(s.toString()));
-//            studentRepository.findByGrade("大学").forEach(s -> {
-//                logger.info(s.toString());
-//            });
-
+            studentRepository.findByGrade("大学").forEach(s -> {
+                logger.info(s.toString());
+            });
         };
     }
 }

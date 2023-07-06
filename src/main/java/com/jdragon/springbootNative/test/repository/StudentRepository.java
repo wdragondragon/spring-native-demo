@@ -16,5 +16,6 @@ public interface StudentRepository extends JpaRepository<Student, Integer> {
 
     List<Student> findByGrade(String grade);
 
+    @Override
     Optional<Student> findById(Integer id);
 }
